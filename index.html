@@ -2,17 +2,28 @@
   <header>
     <title>cm test</title>
     <link rel="stylesheet" href="./node_modules/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="./node_modules/codemirror/theme/monokai.css">
     <script src="./node_modules/codemirror/lib/codemirror.js"></script>
-    <script src="./node_modules/codemirror/mode/yaml-frontmatter/yaml-frontmatter.js"></script>
+    <script src="./node_modules/codemirror/mode/yaml/yaml.js"></script>
   </header>
   <body>
     <div id="editor">
     </div>
     <script>
       var mirror = CodeMirror(document.getElementById('editor'), {
-        value: 'yaml:\n  - test',
+        value: `items:
+    - part_no:   A4786
+      descrip:   Water Bucket (Filled)
+      price:     1.47
+      quantity:  4
+
+    - part_no:   E1628
+      descrip:   High Heeled "Ruby" Slippers
+      size:       8
+      price:     100.27
+      quantity:  1`,
         lineNumbers: true,
-        mode: 'yaml-frontmatter',
+        mode: 'yaml',
       })
     </script>
   </body>
